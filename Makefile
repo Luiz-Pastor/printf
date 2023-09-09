@@ -1,36 +1,38 @@
 ##########################################
 NAME=libftprintf.a
-FLAGS=-Wall -Werror -Wextra
 CC=cc
+FLAGS=-Wall -Werror -Wextra
 ##########################################
-C_FOLDER=src
-C_SRC=		ft_placeholder_utilities.c	\
+
+SRC_FOLDER=src
+SRC=		ft_placeholder_utilities.c	\
 			ft_placeholder_string.c		\
 			ft_placeholder_number.c		\
 			ft_placeholder_pointer.c	\
 			ft_placeholder_hexanumber.c	\
 			ft_printf.c
-C_OBJECTS=$(C_SRC:%.c=%.o)
+OBJ=$(SRC:%.c=%.o)
+
 ##########################################
 
 all: $(NAME)
 
-$(NAME): $(C_OBJECTS)
+$(NAME): $(OBJ)
 	ar crs $(NAME) $^
 
-%.o: $(C_FOLDER)/%.c
+%.o: $(SRC_FOLDER)/%.c
 	$(CC) -c $(FLAGS) $<
 
 ##########################################
 
 clear:
-	@rm -rf $(C_OBJECTS)
+	@rm -rf $(OBJ)
 
 fclear: clear
 	@rm -rf $(NAME)
 
 re: fclear $(NAME)
 
-.PHONY: clear fclear re
+.PHONY: all clear fclear re
 
 ##########################################

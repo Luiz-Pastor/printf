@@ -9,6 +9,8 @@ int	ft_print_p(va_list arguments)
 
 	index = 0;
 	elem = va_arg(arguments, void *);
+	if (!elem)
+		return (write(1, "(nil)", 5));
 	to_hexa((unsigned long long) elem, text, HEXA_MIN);
 	write(1, "0x", 2);
 	count = 2;

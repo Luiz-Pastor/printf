@@ -29,7 +29,7 @@ int	ft_print_xx(va_list argument)
 	index = 0;
 	count = 0;
 	number = va_arg(argument, unsigned int);
-	to_hexa(number, text, HEXA_MIN);
+	to_hexa(number, text, HEXA_MAX);
 	while (text[index])
 	{
 		count += write(1, &text[index], 1);

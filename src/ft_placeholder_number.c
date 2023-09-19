@@ -1,4 +1,5 @@
 #include "../include/modules.h"
+#include <stdio.h>
 
 int	print_number(long number)
 {
@@ -36,20 +37,21 @@ int	ft_print_d(va_list arguments)
 	return (print_number(number));
 }
 
-int	ft_print_i(va_list arguments)
-{
-	long	number;
+// int	ft_print_i(va_list arguments)
+// {
+// 	long	number;
 
-	number = va_arg(arguments, long);
-	if (number > 2147483647)
-		number -= 4294967296;
-	return (print_number(number));
-}
+// 	number = va_arg(arguments, long);
+// 	printf(">> %ld\n", number);
+// 	if (number > 2147483647)
+// 		number -= 4294967296;
+// 	return (print_number(number));
+// }
 
 int	ft_print_u(va_list arguments)
 {
 	long	number;
 
-	number = va_arg(arguments, long);
+	number = va_arg(arguments, unsigned int);
 	return (print_number(number));
 }

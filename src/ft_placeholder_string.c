@@ -17,6 +17,8 @@ int	ft_print_s(va_list arguments)
 	count = 0;
 	index = 0;
 	str = va_arg(arguments, char *);
+	if (!str)
+		return (write(1, "(null)", 6));
 	while (str[index])
 	{
 		count += write(1, &str[index], 1);

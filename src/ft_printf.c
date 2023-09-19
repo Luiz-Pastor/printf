@@ -6,12 +6,12 @@ static int	print_ph(char ph, va_list arguments)
 		return (ft_print_c(arguments));
 	if (ph == 's')
 		return (ft_print_s(arguments));
-	if (ph == 'd')
+	if (ph == 'd' || ph == 'i')
 		return (ft_print_d(arguments));
 	if (ph == 'p')
 		return (ft_print_p(arguments));
-	if (ph == 'i')
-		return (ft_print_i(arguments));
+	// if (ph == 'i')
+	// 	return (ft_print_i(arguments));
 	if (ph == 'u')
 		return (ft_print_u(arguments));
 	if (ph == 'x')

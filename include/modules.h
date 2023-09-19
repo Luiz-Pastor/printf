@@ -20,7 +20,7 @@ int			ft_print_d(va_list arguments);
 int			ft_print_p(va_list arguments);
 int			ft_print_x(va_list argument);
 int			ft_print_xx(va_list argument);
-int			ft_print_i(va_list arguments);
+// int			ft_print_i(va_list arguments);
 int			ft_print_u(va_list arguments);
 
 #endif

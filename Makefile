@@ -24,15 +24,29 @@ $(NAME): $(OBJ)
 	$(CC) -c $(FLAGS) $<
 
 ##########################################
+TEST_EX=test
+TEST_SRC=main.c
+TEST_OBJ=$(TEST_SRC:%.c=%.o)
 
-clear:
+t: $(TEST_EX) 
+$(TEST_EX): $(NAME) $(TEST_OBJ)
+	cc $(TEST_OBJ) -o $(TEST_EX) -L. -lftprintf
+
+main.o: main.c
+	cc -c main.c
+tclean:
+	@rm -rf $(TEST_OBJ) $(TEST_EX)
+
+##########################################
+
+clean:
 	@rm -rf $(OBJ)
 
-fclear: clear
+fclean: clean
 	@rm -rf $(NAME)
 
-re: fclear $(NAME)
+re: fclean $(NAME)
 
-.PHONY: all clear fclear re
+.PHONY: all clean fclean re
 
 ##########################################

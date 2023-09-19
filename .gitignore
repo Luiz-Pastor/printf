@@ -1,3 +1,5 @@
 .vscode
 libftprintf.a
 *.o
+test
+main.c
